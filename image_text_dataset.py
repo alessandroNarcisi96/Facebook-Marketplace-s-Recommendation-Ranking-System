@@ -59,8 +59,6 @@ class ImageTextDataset(torch.utils.data.Dataset):
         super().__init__()  
         if not os.path.exists('data/resized_images'):
             raise RuntimeError('Image Dataset not found, use download=True to download it')
-
-       
         self.products = ds
 
         self.descriptions = self.products['product_description'].to_list()
@@ -74,7 +72,6 @@ class ImageTextDataset(torch.utils.data.Dataset):
         self.encoder = {y: x for (x, y) in enumerate(set(self.labels))}
         self.decoder = {x: y for (x, y) in enumerate(set(self.labels))}
         self.transform = transform
-        print("fatto")
         if transform is None:
             self.transform = transforms.Compose([
                 transforms.Resize(256),
