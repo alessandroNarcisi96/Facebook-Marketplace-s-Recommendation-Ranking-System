@@ -17,7 +17,7 @@ So in this case I will use a pre-trained model called nvidia_resnet50.
 ### Text
 To perform the word-embedding I used the BERT(Bidirectional Encoder Representations from Transformers).
 It turns out that the performance of this model are really good as it connects a word to its context in order to understand better the meaning.
-So in this case I will aplly a transfer learning and I will tune just the final layer with the descriptions of the products provided by the dataset.
+So in this case I will apply a transfer learning and I will tune just the final layer with the descriptions of the products provided by the dataset.
 
 
 ## Milestone 1 - Data Cleaning
