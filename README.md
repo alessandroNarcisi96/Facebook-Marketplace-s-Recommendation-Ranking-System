@@ -9,12 +9,15 @@ The target variable the predict is the category.
 The idea is building a model that is able to analyze both images and text at the same time.
 
 ### Images
-Needless to say to understand complex images we need to use Deep Learning and in this case I will use Pytorch.
-A tecnique results very powerfull called Transfer Learning.It consists in using a pre-trained model and fine it by adding a final linear layer.
+Needless to say to understand complex images we need to use CNN and in this case I will use Pytorch.
+I will use a tecnique very powerfull called Transfer Learning.
+It consists in using a pre-trained model and fine it by adding a final linear layer.
 So in this case I will use a pre-trained model called nvidia_resnet50.
 
 ### Text
-To perform the word-embedding I used the BERT(Bidirectional Encoder Representations from Transformers)
+To perform the word-embedding I used the BERT(Bidirectional Encoder Representations from Transformers).
+It turns out that the performance of this model are really good as it connects a word to its context in order to understand better the meaning.
+So in this case I will aplly a transfer learning and I will tune just the final layer with the descriptions of the products provided by the dataset.
 
 
 ## Milestone 1 - Data Cleaning
@@ -48,4 +51,4 @@ At the end of the neural netowrk there is a liner layer
 At the end of project.ipynb there is the training and the validation.
 The lost function is the CrossEntropy with 5 epochs.
 
-the result with 13 categories is quite good:90% accuracy on training set and 85% accuracy on validation set
+The result with 13 categories is quite good:90% accuracy on training set and 85% accuracy on validation set
