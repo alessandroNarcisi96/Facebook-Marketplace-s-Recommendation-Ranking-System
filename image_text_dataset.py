@@ -119,8 +119,9 @@ class ImageTextDataset(torch.utils.data.Dataset):
 
 
 def split_train_test(dataset):
-    train_dataset = dataset.head(50)  
-    validation_dataset = dataset.tail(50)
-    validation_dataset = validation_dataset.reset_index()
-    return train_dataset, validation_dataset
+    train, validate, test = np.split(dataset.sample(frac=1, random_state=42),[int(.6*len(dataset)), int(.8*len(dataset))])
+              
+    validate = validate.reset_index()
+    test = test.reset_index()
+    return train, validate,test
 
